@@ -1,0 +1,81 @@
+Please keep all files related to a homework or an assignment within the appropriate directory. Files checked in outside of specific homework or assignment directory will not be reviewed or graded for that homework/assignment.
+
+Check in and modify files as many times as you like. You will not be able to modify the files after the deadline.
+
+You will work as a pair, both of you are responsible for the completed work in all assignments and homework. Reasonable effort is expected from each person. If you do not check in, you will not receive any scores. When pairing please switch who checks in so there is significant number of check in from each of you.
+
+The deadlines are strict, there will be no extensions. Don't email any code to Venkat or to the mailing list. Your last check in before the deadline will be graded. If your last check in breaks the code, both you and your pair will lose significant points.
+
+Please feel free to ask for frequent reviews. See the reviews/readme.txt file for details on how to ask for reviews.
+
+You can evolve the answers and solutions based on the reviews. Only the latest checkin at the time of review will be looked at. Also the final check in will be the only one graded.
+
+You are still responsible to successfully complete an homework or assignment even if your pair is a no-show. You can request to change pairs at any time and if there is another person in the class willing to pair with you we can make the switch.
+
+A lot of help will be provided in this course, but you have to start early and ask for help along the way.                                                                      
+
+Please read the academic honesty policy posted on the course mailing list.                   
+
+The above details apply to all homework and assignments in this course.                   
+
+Now to homework #1.
+==============================================================================
+HW1: Due 11:59PM CT September 9
+
+1. Give some examples of languages that are statically typed?
+
+    A language is statically-typed if the type of a variable is known at compile-time
+    C, C++, C# , Java, Rust, Typescript, Go, Scala, Haskell, FORTRAN, Pascal
+
+2. Give some examples of languages that are dynamically typed?
+
+    A language is dynamically-typed if the type of a variable is checked during run-time
+    Python, Javascript, Ruby, Groovy, Perl, Erlang, PHP, Clojure
+
+3. Give examples of languages that provide support for both.
+
+    C#, it has support for the "dynamic" type which avoids compile time checking and is typed at run time, although this is expensive
+        it is expensive because we lose the perks that compile time checking gives us. By by-passing that the dynamic type must perform 
+        more operations such as addition. The two dynamics the program would first have to check what the typing of the two objects are 
+        and then figure out if it is possible to add them. With compile time typing the program would already know what add operation to 
+        use if the two objects were typed and had add operations defined.
+
+    Typescript, it is a superset of Javascript thus it supports dynamic and static typing, it supports dynamic typing with the use of the any type 
+                that by passes the compile time checking making it essentially Javascript run time type checking
+
+    Objective-C is a layer on the C language itself and, as such, can have both static and dynamic types. Static if it's being use the base-C language, dynamic if using the Objective-C extensions.
+
+    Cython, it supports C styled tpying and is compiled, it allows you to write pure python in it aswell as import modules into a python file. 
+
+4.
+"A statically typed language verifies the type of variables and objects at compile time. In order for this to work, when programming in a statically typed language, we have to specify the type for each variable."
+
+Discuss in favor or against the above statement. Give examples.
+    
+    We will go against the statement above. A statically-typed language verifies the type of variables and objects at compile time. However, it does not need to be for it work because of type inference
+
+    Type inference refers to automatic deduction of the data type of an expression in a promgramming language, such as C++. In C++, there are many keywords included to allow type deduction to the compiler itself. Also, we do not have to specify the type for each variable because with type inference capabilities, we spend less time having to write out things the compiler already knows
+
+    For example, the "auto" keyword specifies that the type of the variable that is being declared will be automatically deducted from its initializer. In the case of functions, if their return type is auto, then that will be evaluated by return type expression at runtime
+
+    The "typeid" is an operator which is used where the dynamic type of an object needs to be known. The "decltype" inspects the decalred type of an entity or the type of an expression. 
+
+    Example in C++:
+    1.
+    auto x = 4;
+    auto y = 5.125
+
+    cout << typeid(x).name() << endl;    //OUTPUT: i   
+    cout << typeid(y).name() << endl;    //OUTPUT: d
+
+    i and d stand for int and double
+
+
+    2.
+    int x = 5;
+ 
+    decltype(x) j = x + 5;
+ 
+    cout << typeid(j).name();  OUTPUT: i 
+
+    

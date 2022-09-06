@@ -1,0 +1,217 @@
+				Functional Style
+
+- Imperative vs. Functional Style
+
+- Imperative Style - Total imperative example
+---JAVA CODE---
+
+public class Sample {
+	public static void main(String[] args) {
+		List<Integer> values = new ArrayList<Integer>();
+
+		values.add(1);
+		values.add(2);
+		values.add(3);
+
+		System.out.println(totalValues(values));
+	}
+
+	private static int totalValues(List<Integer> values) {
+		int total = 0;
+		//External iterator
+		for (int value : values) {
+			total += value;
+		}
+
+		return total;
+	}
+}
+
+- What's Functional
+	- Functions are first class citizens
+		- you are be able to decompose your application using functions
+	- Functions are higher order
+		- you can create function within function
+	- Function don't have any side-effect
+		- they promote and maintain immutability (you dont modify things, you can create/re-create but cant change things)
+		- Benefits:
+			- Proven correct mathematically much easier 
+			- Referential transparency (means you can take sub-computation and you can re-order sub-computation. Reorder sub-computation is what compiler do often for optimazation purposes)
+			- Enjoy multithread concurrency
+			a + b + c + d
+				t1 = a + b
+				t2 = c + d
+				t1 + t2
+
+				t3 = c + d
+				t4 = a + b
+				t3 + t4
+
+---JAVA CODE---
+
+public class Sample {
+	public static void main(String[] args) {
+		List<Integer> values = new ArrayList<Integer>();
+
+		values.add(1);
+		values.add(2);
+		values.add(3);
+
+		System.out.println(totalValuesWithImmutability(values, values.size(), 0));
+	}
+
+	// 1, 2, 3, 4, 5, 6
+	// totalValuesWithImmutability(list, 6, 0);
+	// totalValuesWithImmutability(list, 5, 0 + 6);
+	// totalValuesWithImmutability(list, 6, 0);
+
+	private static int totalValuesWithImmutability(List<Integer> values, int size, int currentTotal) {
+		if (size == 0)
+			return currentTotal;
+		return totalValuesWithImmutability(values, size - 1, currentTotal + values.get(size - 1));
+	}
+}
+
+- Total using inject
+
+- Ruby is a dynamically language with functional style in it. 
+---RUBY CODE---  
+values = [1, 2, 3, 4, 5, 6]
+
+//Internal iterator is where you don't tell how to do the looping
+values.each { |e| puts e }  //each function is a void
+
+values.map { |e| e * 2 }
+
+result = values.find_all { |e| e % 2 == 0}
+puts result.join(', ')
+
+
+total = 0
+values.each { |e| total += e } //not functional!
+This is a closure because total has to be bounded or closed over to a variable outside in scope. 
+
+
+Without automatic garbage collection it would be real hard to program functional style with immutability!
+
+John  Peter  Paul  Sam
+15		20	  25	28
+
+#Sam create a new postit note with 28 on it and gives it to Paul
+#Paul create a new postit note with 53 and gives it to Peter
+#Peter create a new postit note with 73 and give it to John
+
+puts values.inject(0) { |carryOver, e| carryOver + e } //completely immutability!!
+
+# 1. carryOver is bound to 0 and e is bound to 1. The function returns 1 (carryOver + e)
+# 2. inject now calls the function again, this time with carryOver bound to 1 and e bound to 2. The function returns 3 (carryOver + e)
+# 3. inject now calls the function again, this time with carryOver bound to 3 and e bound to 3. The function returns 6 (carryOver + e)
+
+
+
+- Passing functions - Groovy
+---Groovy CODE---
+def totalValues(values) {
+	def total = 0
+	values.each { total += it }
+	total
+}
+
+def totalEvenValues(values) {
+	def total = 0
+	values.each {
+		if (it % 2 == 0) total += it
+	}
+	total
+}
+
+def totalOddValues(values) {
+	def total = 0
+	values.each {
+		if (selector(it)) total += it
+	}
+	total
+}
+
+def listOfValues = [1, 2, 3, 4, 5, 6, 7, 8]
+println totalValues(listOfValues)
+println totalEvenValues(listOfValues)
+println totalOddValues(listOfValues)
+
+!!!The code above have too much duplicate!!!
+We're going to refactor and make the code reusable 
+
+
+def totalSelectedValues(values, selector) {
+	def total = 0
+	values.each { 
+		total += it 
+	}
+	total
+}
+
+println totalSelectedValues(listOfValues, { true })
+println totalSelectedValues(listOfValues) { it % 2 == 0 }
+println totalSelectedValues(listOfValues) { it % 2 == 1 }
+println totalSelectedValues(listOfValues) { it < 7 }
+
+
+- Passing functions - Scala
+def totalSelectedValues(values: List[Int], selector: Int => Boolean) = {
+	var total = 0
+	values.foreach { e =>
+		if (selector(e)) total += e
+	}
+	total
+}
+
+var listOfValues = List(1, 2, 3, 4, 5, 6, 7)
+println(totalSelectedValues(listOfValues, { e => true }))
+println(totalSelectedValues(listOfValues, { e => e % 2 == 0}))
+
+
+- Mutability vs. Immutability
+- Immutability in Scala
+---Scala Code---
+var - variable you can modify
+val - values you cannot modify
+
+var buff1 = new StringBuilder
+buff1.append("Hello") //we are changing the values, mutability
+println(buff1) //print "Hello"
+
+buff1 = new StringBuilder
+buff1.append("there")
+println(buff1) //print "there" not Hellothere
+
+
+val buff2 = new StringBuilder
+buff2.append("ok") //mutating
+println(buff2) 
+
+buff2 = new StringBuilder //ERROR: New reassignment of a value
+buff2.append("ok?") 
+println(buff2) 
+
+var is like a variable in Java and C#
+val is like final in Java and readonly in C# (or is it like const in C#?)
+
+
+
+- Immutability in Erlang
+---Erlang Code---
+main(_) ->
+	Values = [1, 2, 3, 4, 5, 6],
+	Doubled = lists:map(fun(E) -> E * 2 end, Values),
+	io:format("~p", [Doubled]).
+
+closure:
+(define add [op1 op2]
+	(+ op1 op2)
+)
+(println (add 2 4))
+
+
+
+
+

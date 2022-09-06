@@ -1,0 +1,55 @@
+[Reviewed 09/05/22 06:36 AM CEST]
+synopsis: let's revisit a few parts
+
+details: 
+
+1.
+
+"variable is known at compile-time" Simply known or verified as well?
+
+2.
+
+Good
+
+3.
+
+"it is expensive because we lose the perks that compile time checking gives us" How is that expensive? What is the expense? If this is really expensive then why have that feature?
+
+Please spellcheck.
+
+4.
+
+"A statically-typed language verifies the type of variables and objects at compile time. However, it does not need to be for it work because of type inference" - it does not need to be for it work - what does that mean? There is something you have in mind, but that was not put into words. So these sentences do not make sense. Please rework to make sure what we are thinking is actually typed in to the words.
+
+Please make this section a lot shorter to convey the idea.
+
+------------------------------------------------------------------------------
+[Reviewed 09/04/22 16:04 PM CEST]
+synopsis: let's expand
+
+details: 
+
+1.
+
+What makes a language statically typed?
+
+2.
+
+What makes a language dynamically typed?
+
+3.
+
+Good example of C#.
+
+"although this is expensive" In what way?
+
+"Javascript, it is a super set of Typescript thus it supports dynamic and static typing" How so?
+
+Any other languages?
+
+4.
+
+We want to see one collective argument, not disjoint arguments from each person.
+
+------------------------------------------------------------------------------
+134
