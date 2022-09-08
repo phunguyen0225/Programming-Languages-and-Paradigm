@@ -1,34 +1,3 @@
-[Reviewed 09/08/22 05:21 AM CEST]
-synopsis: you're done
-
-details: 
-
-yay
-
-------------------------------------------------------------------------------
-[Reviewed 09/07/22 06:43 AM CEST]
-synopsis: let's expand or contract
-
-details: 
-
-"It has been tested that dynamic could be at least 18 times slower than static typing in C#"
-
-Please state how this is relevant to the question, how we are going to make use of this information. Furthermore, please mention this impact for each of the other languages provided as an example in this section.
-
-If this discussion is not relevant, then instead of expanding, contract and remove this part.
-
-------------------------------------------------------------------------------
-[Reviewed 09/07/22 06:03 AM CEST]
-synopsis: how much is the expense, let us clarify
-
-details: 
-
-"The extra code generated will slow down the program compared 
-    to compile time type checking." By how much does it slow down? How is that relevant to the question at hand? How are we going to make use of these details being presented in the context of the question at hand.
-
-Please see my review on 09/06/22
-		
-------------------------------------------------------------------------------
 [Reviewed 09/06/22 06:37 AM CEST]
 synopsis: let's dig into how expensive it is
 
@@ -123,3 +92,4 @@ Any other languages?
 We want to see one collective argument, not disjoint arguments from each person.
 
 ------------------------------------------------------------------------------
+34

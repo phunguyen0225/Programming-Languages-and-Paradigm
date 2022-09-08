@@ -34,7 +34,13 @@ HW1: Due 11:59PM CT September 9
 
 3. Give examples of languages that provide support for both.
 
-    C#, it has support for the "dynamic" type which avoids compile-time checking and is typed at run time
+    C#, it has support for the "dynamic" type which avoids compile-time checking and is typed at run time, although this is expensive.
+    It's expensive because the compiler has to generate code to check the type of the variable at run time. 
+    The code generated must be able to handle the case where the type is not what is expected. The extra code generated will slow down the program compared 
+    to compile time type checking.
+    With compile time type checking, the compiler can generate code that assumes the type of the variable is correct and does not have to check the type at run time. This is efficient since the compiler only need to figure out the type once where as with dynamic type checking the type must be checked at run time for every use of the variable. Dynamic tpye is useful when we don't know the type of a variable at compile time, for example when we are querying a database and the type of the result is not known until run time.
+
+    
 
     Typescript, is a superset of Javascript thus it supports dynamic and static typing, it supports dynamic typing with the use of the any type 
                 that bypasses the compile time checking making it essentially Javascript run-time type checking
