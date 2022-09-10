@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="assign1.PerfectNumberCheckerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-09-10T18:09:47" hostname="Phus-MBP.attlocal.net" time="0.012">
+  <properties/>
+  <testcase name="canary()" classname="assign1.PerfectNumberCheckerTest" time="0.007"/>
+  <testcase name="getFactorOf6()" classname="assign1.PerfectNumberCheckerTest" time="0.002"/>
+  <testcase name="getFactorOf50()" classname="assign1.PerfectNumberCheckerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
