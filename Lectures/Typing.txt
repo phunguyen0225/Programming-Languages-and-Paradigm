@@ -1,0 +1,131 @@
+				Typing
+
+- Data and Values
+
+- What's a Type?
+	- Set of values
+	- v is of type T means v belongs to T
+	- If an expression of function is of type T, their result belongs to T
+
+- Data Types
+	- Primitive
+		int, double, char, float, string, etc.. (java, c, c++, etc..)
+	- Composites
+		Collection of other type. (ruby, scala)
+	- Recursive
+		Objects may have other object and so on
+
+- Lists play special role in functional languages
+
+--Erlang Code--
+
+main(_) ->
+	process([1, 2, 3, 4, 5]).
+
+//split the head and the tail
+process([H|T]) -> 
+	io:format("~p~n", [H]),  OUTPUT: 1 
+	io:format("~p~n", [T]).	 OUTPUT: [2, 3, 4, 5]
+
+	-------------------
+
+main(_) ->
+	process([1, 2, 3, 4, 5]).
+
+process([H|[]]) ->    //when the tail is empty
+	io:format("~p", [H]);
+
+process([H|T]) -> 
+	io:format("~p-", [H]),
+	process(T). //recursive call, keep spliting head until tail is empty
+
+OUTPUT: 1-2-3-4-5
+
+- Static vs. Dynamic typing
+
+	- A language is statically-typed if the type of a variable is checked at compile-time
+
+	- A language is dynamically-typed if the type of a variable is checked during run-time
+
+- Statically-language does not have to specify the type in order for it to work because of type inference.
+
+--Scala Code---
+
+var value = 1
+println(value)
+
+value = 4
+println(value)
+
+//Scala supports type inference
+
+- Which one is better? (is one better?)
+
+	- it depends on what you do, sometimes one is better than the other 
+
+- Design by contract vs. design by capability
+	
+	- design by contract is use by static language because of interfaces, there's a contract between them. 
+
+	- design by capability is use by dynamic language and it is where an object support a certain method. More of a collaboration than a contract
+
+- Strong vs Weak typing
+
+	- Type verification at runtime
+
+Strong typing JAVA CODE:
+
+public static void main(String[], args) {
+	Object obj1 = "hello";
+
+	Object obj2 = 2;
+
+	use(obj1);
+	use(obj2);
+}
+
+private static void use(Object obj) {
+	String str = (String) obj;  //run time error for obj2 because it's an INTEGER, casting will not go through
+
+	System.out.println
+}
+
+Java is a strong type language, because during runtime, it will verify whether the object is the type we expect the obj to be. 
+
+
+Weakly type is C++ and C
+
+Static - Strong: Scala, Java, C#, Haskell, F#
+Static - Weak: C, C++
+
+Dynamic - Strong: Ruby, Groovy, Python, Clojure, Erlang
+Dynamic - Weak: Perl, JavaScript, PHP, VB
+
+Quiz: Select seven different languages (ignore Java, C++, C#) and mention if they are static, dynamic, strong, or weak typing
+
+
+Strong-typed statically languages: Scala, Haskell, and F#
+Strong-typed dynamically languages: Ruby, Groovy, Python, CLojure, and Erlang
+
+Weak-typed statically languages: C
+Weak-typed dynamically languages: Perl, JavaScript, PHP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
