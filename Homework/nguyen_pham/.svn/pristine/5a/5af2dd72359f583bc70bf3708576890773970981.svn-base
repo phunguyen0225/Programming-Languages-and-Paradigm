@@ -1,0 +1,37 @@
+package assign1;
+
+import org.junit.jupiter.api.Test;
+
+import java.util.*;
+
+import static org.junit.jupiter.api.Assertions.*; 
+
+public class PerfectNumberCheckerTest {
+  @Test
+  public void canary() { 
+    assertTrue(true);
+  }
+
+  @Test
+  void sumOfFactor6() {
+    assertEquals(12, PerfectNumberChecker.sumOfFactors(6));
+  }
+
+  @Test
+  void sumOfFactors50() {
+    assertEquals(93, PerfectNumberChecker.sumOfFactors(50));
+  }
+
+  @Test
+  void testsForIsPerfect() {
+    assertAll(
+      () -> assertTrue(PerfectNumberChecker.isPerfect(6)),
+      () -> assertTrue(PerfectNumberChecker.isPerfect(28)),
+      () -> assertFalse(PerfectNumberChecker.isPerfect(50)),
+      () -> assertFalse(PerfectNumberChecker.isPerfect(100)),
+      () -> assertTrue(PerfectNumberChecker.isPerfect(496)),
+      ()-> assertFalse(PerfectNumberChecker.isPerfect(500)),
+      () -> assertTrue(PerfectNumberChecker.isPerfect(8128))
+    );
+  }
+}

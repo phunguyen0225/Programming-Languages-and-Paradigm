@@ -1,4 +1,6 @@
 cd assign1
-cd java
-chmod +x ./gradlew
-./gradlew --info
+
+chmod +x ./java/gradlew
+./java/gradlew --info
+
+python -m unittest python/test/test_PerfectNumberChecker.py
