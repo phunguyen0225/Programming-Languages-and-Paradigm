@@ -1,0 +1,35 @@
+				Procedures
+
+- What makes a procedures?
+	- Expressions
+	- Composites of expressions
+	- Abstraction
+
+- Read-Evaluate-Print Loop (REPL)
+	- Started with Lisp Interpretive Environment, but several languages now support it
+	- Easy to evaluate expressions
+	- Helps to learn a language
+	- Helps to experiment and build code
+
+- Expressions
+	- Expression are evaluated and produce a result
+	- A number is a primitive expression
+	- Combinations: You can use operators to create other expressions
+		- 4 + 2 [or in LISP (+42) ]
+
+- Variables
+	- Identified by a name
+	- Has values
+	- Define vs. Assign
+
+- Procedures
+	- Composed of expressions
+	- Compound Procedures - identified by a name and represents an opertaion
+	- Applying a function-you evaluate a procedure by sending arguments for the parameters
+
+- Order of Evaluation
+	- Applicatve Order
+		- Operators and parameters evaluated before procedure is evaluated
+
+	- Normal Order
+		- Operators and parameters are evaluated only after the procedure is fully expanded

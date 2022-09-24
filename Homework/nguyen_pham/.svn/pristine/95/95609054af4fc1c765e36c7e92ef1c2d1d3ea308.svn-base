@@ -1,0 +1,116 @@
+[Reviewed 09/15/22 15:22 PM CEST]
+synopsis: no build file found
+
+details: 
+
+Java:
+
+done
+
+Python:
+
+no build file found.
+
+------------------------------------------------------------------------------
+[Reviewed 09/15/22 06:30 AM CEST]
+synopsis: missing build file
+
+details: 
+
+Java:
+
+Please see suggestions in code.
+
+Python:
+
+build file? 
+
+------------------------------------------------------------------------------
+[Reviewed 09/14/22 07:10 AM CEST]
+synopsis: let's make small improvements
+
+details: 
+
+Please see suggestions in code.
+
+Let's start on the next language.
+
+------------------------------------------------------------------------------
+[Reviewed 09/13/22 09:29 AM CEST]
+synopsis: let's refactor
+
+details: 
+
+Please see suggestions in code.
+
+------------------------------------------------------------------------------
+[Reviewed 09/13/22 06:32 AM CEST]
+synopsis~: where did the imperative style go?
+
+details: 
+
+Where did the imperative style version go?
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 09/12/22 05:23 AM CEST]
+synopsis: good so far
+
+details: 
+
+Good so far.
+
+Let's move forward to the functional style version.
+
+------------------------------------------------------------------------------
+[Reviewed 09/12/22 04:58 AM CEST]
+synopsis: let's reduce some noise
+
+details: 
+
+Please see suggestions in code.
+
+Let's move forward to the functional style version.
+
+------------------------------------------------------------------------------
+[Reviewed 09/11/22 11:23 AM CEST]
+synopsis: let's complete the is perfect imperative
+
+details: 
+
+Let's complete the isPerfectImperative function and then review.
+
+Please see suggestions in code.
+
+------------------------------------------------------------------------------
+[Reviewed 09/10/22 08:53 AM CEST]
+synopsis: good so far, let's move forward
+
+details: 
+
+Good so far. Please see suggestions in code. Let's move forward.
+
+------------------------------------------------------------------------------
+[Reviewed 09/10/22 05:54 AM CEST]
+synopsis~: no build file found
+
+details: 
+
+Did not find any file to easily compile and run the tests from the command line. Let's start by creating a build file. Also, please place Java related details into a java (lowercase name) directory under assign1.
+
+Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
+
+------------------------------------------------------------------------------
+[Reviewed 09/09/22 19:41 PM CEST]
+synopsis: language choices
+
+details: 
+
+The team has selected these languages (may be changed later if the team desires):
+
+!Java
+-Python
+-Go
+
+------------------------------------------------------------------------------
