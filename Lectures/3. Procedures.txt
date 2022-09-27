@@ -1,0 +1,140 @@
+				Procedures
+
+- What makes a procedures?
+	- Expressions
+	- Composites of expressions
+	- Abstraction
+
+- Read-Evaluate-Print Loop (REPL)
+	- Started with Lisp Interpretive Environment, but several languages now support it
+	- Easy to evaluate expressions
+	- Helps to learn a language
+	- Helps to experiment and build code
+
+- Expressions
+	- Expression are evaluated and produce a result
+	- A number is a primitive expression
+	- Combinations: You can use operators to create other expressions
+		- 4 + 2 [or in LISP (+42) ]
+
+- Variables
+	- Identified by a name
+	- Has values
+	- Define vs. Assign
+
+- Procedures
+	- Composed of expressions
+	- Compound Procedures - identified by a name and represents an opertaion
+	- Applying a function-you evaluate a procedure by sending arguments for the parameters
+
+- Order of Evaluation
+	- Applicatve Order
+		- Operators and parameters evaluate before procedure is evaluated
+		- def square(x) = x * x
+		- square(2 + 3) = square(5) = 5 * 5 = 25
+		- Efficient
+		- Can remove duplicate computations
+
+	- Normal Order
+		- Operators and parameters are evaluated only after the procedure is fully expanded
+		- def square(x) = x * x
+		- square(2 + 3) = (2 + 3) * (2 + 3) = 5 * 5 = 25
+		- Result is same as applicative ordeer
+		- Not as efficient
+		- However, lazy evaluation can come in handy at times
+		- May eliminate the need for some computations or may push it just in time
+
+- Decomposing Procedueres
+	- It is easier if we decompose procedures into smaller procedures
+	- Easy to comprehend
+	- Easy to explain
+	- Easy to express and maintain
+
+- Find square root 
+	- Sucessive Refinement
+
+---SCALA CODE--- *Not encapsulated*
+
+println(sqrt(25))
+
+def sqrt(cadidate: Double) = {
+	sqrtSuccessive(1, candidate)
+}
+
+def sqrtSuccessive(guess: Double, candidate: Double) : Double = {
+	if (goodEnoughGuess(guess, candidate)) {
+		guess
+	} else {
+		sqrtSuccessive(improve(guess, candidate), candidate)
+	}
+}
+
+def goodEnoughGuess(guess: Double, candidate: Double) = {
+	val TOLERANCE = 0.0000000001
+	Math.abs(guess * guess - candidate) < TOLERANCE
+}
+
+def improve(guess: Double, candidate: Double) = {
+	((candidate / guess) + guess) / 2
+}
+
+// Assume guess is right
+// candidate/guess = guess
+// If guess is not right
+// candidate / guess > result
+// guess <= result <= candidate/guess
+// average a new guess as 
+// ((candidate / guess) + guess) / 2
+
+
+- Abstraction and Encapsulatipon
+	- Procedures should abstract and encapsulate the details
+	- They should tell you what they provide and hide the details of how they do it
+	- User of a procedure should not be forced to know the details of the implementation
+	- User should be conveniently use the procedure
+
+
+---SCALA CODE--- *Encapsulated*
+
+println(sqrt(25))
+
+def sqrt(cadidate: Double) = {
+	def sqrtSuccessive(guess: Double, candidate: Double) : Double = {
+		if (goodEnoughGuess(guess, candidate)) {
+			guess
+		} else {
+			sqrtSuccessive(improve(guess, candidate), candidate)
+		}
+	}	
+
+	def goodEnoughGuess(guess: Double, candidate: Double) = {
+		val TOLERANCE = 0.0000000001
+		Math.abs(guess * guess - candidate) < TOLERANCE
+	}
+
+	def improve(guess: Double, candidate: Double) = {
+		((candidate / guess) + guess) / 2
+	}
+	sqrtSuccessive(1, candidate)
+}
+
+//we encapsulated functions like sqrtSuccessive, goodEnoughGuess and improve //inside one function "sqrt", so now you can call a function like 
+//println(goodEnoughGuess(5.0, 25))
+
+
+- Formal Parameters & Binding
+	- The names chosen for formal parameters should not affect the choice of names by user of a procedure
+	- The formal parameters are called bound variables and a procedure binds to its formal parameters
+	- Local variables are only visible within procedures
+		- These are not affected by outside prcedures and do not affect outside procedures
+
+
+
+
+
+
+
+
+
+
+		
