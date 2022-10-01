@@ -37,7 +37,7 @@ let FibonacciRecursiveTest () =
     TestSetForFibonacci Fibonacci.FibonacciRecursive
 
 [<Test>]
-let FibonacciTailRecursiveTest () =
-    TestSetForFibonacci Fibonacci.FibonacciTailRecursive
+let FibonacciRecursiveIterativeTest () =
+    TestSetForFibonacci Fibonacci.FibonacciRecursiveIterative
 
  

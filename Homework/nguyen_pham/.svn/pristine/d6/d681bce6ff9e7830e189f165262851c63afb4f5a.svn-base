@@ -10,7 +10,7 @@ let Setup () =
 let Canary () =
     Assert.Pass()
 
-let TestSetForFibonacci fibonacci = 
+let TestSetForFibonaccii fibonacci = 
     let TestCases =  [| 
         (0, [1])
         (1, [1; 1])
@@ -29,15 +29,15 @@ let TestSetForFibonacci fibonacci =
         Assert.AreEqual(expected, actual)
 
 [<Test>]
-let FibonacciIterativeTest () =
-    TestSetForFibonacci Fibonacci.FibonacciIterative
+let FibonaciiIterativeTest () =
+    TestSetForFibonaccii Fibonacci.FibonaciiIterative
 
 [<Test>]
 let FibonacciRecursiveTest () =
-    TestSetForFibonacci Fibonacci.FibonacciRecursive
+    TestSetForFibonaccii Fibonacci.FibonaciiRecursive
 
 [<Test>]
-let FibonacciTailRecursiveTest () =
-    TestSetForFibonacci Fibonacci.FibonacciTailRecursive
+let FibonacciRecursiveIterativeTest () =
+    TestSetForFibonaccii Fibonacci.FibonaciiRecursiveIterative
 
  

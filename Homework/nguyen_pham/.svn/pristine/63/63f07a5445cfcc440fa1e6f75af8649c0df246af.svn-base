@@ -1,41 +1,3 @@
-[Reviewed 10/01/22 07:04 AM PDT]
-synopsis~: good so far
-
-details: 
-
-Good so far.
-
-Please see suggestions in files.
-
-Let's move forward to the next language, iterative function.
-
-------------------------------------------------------------------------------
-[Reviewed 09/30/22 07:43 AM PDT]
-synopsis: let's rethink
-
-details: 
-
-Let us rethink on how to implement the tail recursive solution without using iteration or a regular recursion.
-
-------------------------------------------------------------------------------
-[Reviewed 09/29/22 11:21 AM PDT]
-synopsis: no regular recursion in tail recursion
-
-details: 
-
-Please see suggestions in files.
-
-------------------------------------------------------------------------------
-[Reviewed 09/29/22 09:41 AM PDT]
-synopsis~: let's reduce code
-
-details: 
-
-Please see suggestions in files.
-
-Let's do a quick review after these changes. Please modify the requestReview.txt file and check it in as soon as you are ready and I will do a review well before the next scheduled review cycle.
-
-------------------------------------------------------------------------------
 [Reviewed 09/28/22 08:51 AM CDT]
 synopsis: let's refactor
 
@@ -94,7 +56,7 @@ details:
 The team has selected these languages (may be changed later if the team desires):
 
 -Scala
-!F#
+--->F#
 -Lisp
 
 ------------------------------------------------------------------------------
